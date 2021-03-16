@@ -15,16 +15,33 @@ public class RedisGameController {
         String name = this.redis.hget("bb#69", "badaboom");
         System.out.println(name);
     }
+
+    private String opposite(String team){
+        if (team == "red"){
+            return "blue";
+        } else {
+            return "red";
+        }
+    }
+
+    private HashMap<String, String> createBoard(){
+        HashMap words = new HashMap<String, String>()
+    }
+
+    public HashMap<String, Object> getState (String game_ID){
+
+        if (!(this.redis.exists("state" + game_ID))){
+            throw new RuntimeException("Game doesn't exist");
+        }
+
+        HashMap
+    }
 /*
     public HashMap<String, Integer> getScoreState (String gameID){
 
     }
 
     public HashMap<String, String> getWordsState (String gameID){
-
-    }
-
-    public HashMap<String, Object> getState (String gameID){
 
     }
 
