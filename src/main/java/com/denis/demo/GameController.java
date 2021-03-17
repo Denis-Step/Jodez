@@ -4,7 +4,7 @@ import java.util.HashMap;
 public interface GameController {
 
     // Modify to Allow Nested Hashmap
-    public HashMap<String, Integer> getScoreState (String gameID);
+    public HashMap<String, Integer> getScoreState ();
 
     public HashMap<String, String> getWordsState (String gameID);
 

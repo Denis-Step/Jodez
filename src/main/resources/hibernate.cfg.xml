@@ -4,8 +4,11 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url"/>
-    <property name="connection.driver_class"/>
+    <property name="connection.url">jdbc:sqlite:/Users/denisstepanenko/Documents/codez/app/models/db.db</property>
+    <property name="connection.driver_class">org.sqlite.JDBC</property>
+    <mapping class="com.denis.WordsEntity"/>
+    <mapping class="com.denis.GamehistoriesEntity"/>
+    <mapping class="com.denis.UsersEntity"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
