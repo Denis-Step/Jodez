@@ -68,6 +68,10 @@ public class RedisGameController {
 
         }
 
+    private void setWinner(String gameID, String team){
+        this.redis.hset("state:" + gameID, "winner", team);
+    }
+
     public void createGame(String gameID){
         HashMap<String, String> wordsState = this.createBoard();
 
@@ -87,6 +91,8 @@ public class RedisGameController {
         Map test = redis.hgetAll("state:" + gameID);
         test = redis.hgetAll("state:" + gameID);
 
+
+        this.setWinner(gameID, "red");
         System.out.println(this.getState(gameID));
 
 

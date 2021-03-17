@@ -18,6 +18,6 @@ public class JavaDemoApplication {
 
     public static void main(String[] args){
         RedisGameController gameController = new RedisGameController("127.0.0.1", 6379);
-        gameController.createGame("22331s2321");
+        gameController.createGame("22331sk2321");
 }
 }
