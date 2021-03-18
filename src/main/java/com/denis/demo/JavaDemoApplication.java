@@ -2,6 +2,7 @@ package com.denis.demo;
 
 import static spark.Spark.*;
 import com.google.gson.Gson;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,7 +11,7 @@ public class JavaDemoApplication {
 
     public static void main(String[] args){
 
-        RedisGameController gc = new RedisGameController("127.0.0.1", 6379, "/Users/denisstepanenko/IdeaProjects/demo/src/main/java/com/denis/demo/5lenwords.txt");
+        RedisGameController gc = new RedisGameController("127.0.0.1", 6379,  new File("").getAbsolutePath() + "/src/main/java/com/denis/demo/5lenwords.txt");
         staticFiles.location("/client/static/");
         port(5000);
 

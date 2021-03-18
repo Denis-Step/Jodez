@@ -1,7 +1,7 @@
 import axios from "axios";
 import { WordsState, PlayerState } from "./types/types";
 
-const BASE = "159.203.124.40:8000";
+const BASE = "http://127.0.0.1:5000";
 
 interface StateResponse {
   playerState: PlayerState;
