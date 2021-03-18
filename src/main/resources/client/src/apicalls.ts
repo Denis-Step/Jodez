@@ -10,7 +10,6 @@ interface StateResponse {
 
 export async function get_State(game_ID: string): Promise<StateResponse> {
   const endpoint = `/games/${game_ID}`;
-  console.log(BASE + endpoint);
 
   const response = await axios({
     method: "get",
@@ -19,9 +18,22 @@ export async function get_State(game_ID: string): Promise<StateResponse> {
   });
 
   const results = response.data;
-  console.log(results);
   return results;
 }
+
+export async function get_fullState(game_ID: string): Promise<StateResponse> {
+  const endpoint = `/games/${game_ID}/spymaster`;
+
+  const response = await axios({
+    method: "get",
+    url: BASE + endpoint,
+    params: {},
+  });
+
+  const results = response.data;
+  return results;
+}
+
 
 export async function spymaster_Move(
   game_ID: string,

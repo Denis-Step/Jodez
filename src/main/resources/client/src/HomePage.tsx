@@ -1,13 +1,11 @@
 import React, { useState, useCallback } from 'react'
 import {
-  Box,
   VStack,
   Center,
   InputGroup,
   Input,
   Divider,
   Button,
-  HStack,
   Text
 } from '@chakra-ui/react'
 import { create_Game } from './apicalls'

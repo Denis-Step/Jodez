@@ -1,9 +1,12 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import SpymasterBox from "./SpymasterBox";
-import { Center, Text, Stack, VStack, Box } from "@chakra-ui/react";
-import { useSelector } from "react-redux";
+import { Center, Text, Stack, VStack, Box, Switch } from "@chakra-ui/react";
+import { useSelector, useDispatch} from "react-redux";
+import {becomeSpymaster} from "./redux/actions";
 
 const StateBox = (props: { game_ID: string }): JSX.Element => {
+  const [spyView, setSpyView] = useState(false);
+  const dispatch = useDispatch();
   const gameState = useSelector((state) => {
     return {
       action: state.action,
@@ -15,6 +18,11 @@ const StateBox = (props: { game_ID: string }): JSX.Element => {
       winner: state.winner,
     };
   });
+  
+  const changeSpyView = async () => {
+    dispatch(becomeSpymaster(props.game_ID));
+    setSpyView(true);
+  }
 
   const PointsBox = useMemo(
     () => (
@@ -65,7 +73,9 @@ const StateBox = (props: { game_ID: string }): JSX.Element => {
             <Center>{`${gameState.turn}'s Turn`}</Center>
           </Text>
         </Box>
-        <Box w="33%">{TurnBox}</Box>
+        <Box w="33%">
+          <Switch isChecked={spyView} onChange={(e) => changeSpyView()}  />
+          {TurnBox}</Box>
       </Center>
       <hr style={{ paddingBottom: "20px" }} />
     </Stack>

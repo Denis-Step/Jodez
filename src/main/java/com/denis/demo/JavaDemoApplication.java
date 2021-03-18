@@ -42,6 +42,23 @@ public class JavaDemoApplication {
             return stateJSON;
         });
 
+        get("/games/:gameID/spymaster", (req, resp) -> {
+            String gameID = req.params(":gameID");
+            Map<String, Map<String, String>> stateMap = gc.getFullState(gameID);
+            for (Map.Entry<String, String> entry: stateMap.get("wordsState").entrySet()){
+                String val = entry.getValue();
+                if (!val.contains("revealed")){
+                    stateMap.get("wordsState").put(entry.getKey(), val + "-revealed");
+                }
+            }
+
+
+            resp.type("application/json");
+
+            String stateJSON = new Gson().toJson(stateMap);
+            return stateJSON;
+        });
+
         post("/games/", (req, resp) -> {
             HashMap<String, Object> jsonMap = new Gson().fromJson(req.body(), HashMap.class);
             String gameID = (String) jsonMap.get("gameID");
