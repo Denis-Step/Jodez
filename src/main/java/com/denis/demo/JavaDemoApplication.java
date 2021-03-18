@@ -1,17 +1,9 @@
 package com.denis.demo;
 
 import static spark.Spark.*;
-import com.denis.demo.WordSource;
-import com.denis.demo.RedisGameController;
 import com.google.gson.Gson;
-import spark.Response;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
-
-import static spark.Spark.*;
 
 
 public class JavaDemoApplication {
@@ -19,17 +11,6 @@ public class JavaDemoApplication {
     public static void main(String[] args){
 
         RedisGameController gc = new RedisGameController("127.0.0.1", 6379, "/Users/denisstepanenko/IdeaProjects/demo/src/main/java/com/denis/demo/5lenwords.txt");
-       /* HashMap<String, String> action = new HashMap<String, String>();
-        String id = "s2214f";
-        action.put("hint", "cows");
-        action.put("attempts", "2");
-
-        HashMap<String, String> choice = new HashMap<String, String>();
-        choice.put("guess", "wooly");
-        gc.handleTurn(id, "red", "chooser", choice);
-        System.out.println(gc.getState(id)); */
-
-
         staticFiles.location("/client/static/");
         port(5000);
 
