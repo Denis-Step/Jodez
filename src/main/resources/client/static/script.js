@@ -90350,7 +90350,7 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     }
 };
 
-var BASE = "http://127.0.0.1:5000";
+var BASE = "159.203.124.40:8000";
 function get_State(game_ID) {
     return __awaiter(this, void 0, void 0, function () {
         var endpoint, response, results;
