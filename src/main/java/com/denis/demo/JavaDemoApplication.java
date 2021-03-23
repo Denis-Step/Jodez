@@ -18,17 +18,7 @@ public class JavaDemoApplication {
 
     public static void main(String[] args){
 
-        RedisGameController gc = new RedisGameController("127.0.0.1", 6379, "/Users/denisstepanenko/IdeaProjects/demo/src/main/java/com/denis/demo/5lenwords.txt");
-       /* HashMap<String, String> action = new HashMap<String, String>();
-        String id = "s2214f";
-        action.put("hint", "cows");
-        action.put("attempts", "2");
-
-        HashMap<String, String> choice = new HashMap<String, String>();
-        choice.put("guess", "wooly");
-        gc.handleTurn(id, "red", "chooser", choice);
-        System.out.println(gc.getState(id)); */
-
+        RedisGameController gc = new RedisGameController("127.0.0.1", 6379, "/home/denis/Jodez/src/main/java/com/denis/demo/5lenwords.txt");
 
         staticFiles.location("/client/static/");
         port(5000);
