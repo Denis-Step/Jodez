@@ -12,7 +12,7 @@ import { create_Game } from './apicalls'
 import Title from './Title'
 import { useHistory } from 'react-router-dom'
 
-const HomePage = () => {
+const HomePage = (): JSX.Element => {
   const history = useHistory()
   const [createForm, setCreateForm] = useState('')
   const [chooseForm, setChooseForm] = useState('')
@@ -82,4 +82,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default HomePage;
