@@ -11,12 +11,8 @@ public class JavaDemoApplication {
 
     public static void main(String[] args){
 
-<<<<<<< HEAD
-        RedisGameController gc = new RedisGameController("127.0.0.1", 6379, "/home/denis/Jodez/src/main/java/com/denis/demo/5lenwords.txt");
 
-=======
         RedisGameController gc = new RedisGameController("127.0.0.1", 6379,  new File("").getAbsolutePath() + "/src/main/java/com/denis/demo/5lenwords.txt");
->>>>>>> origin/master
         staticFiles.location("/client/static/");
         port(5000);
 
